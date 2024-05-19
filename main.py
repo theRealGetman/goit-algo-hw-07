@@ -62,17 +62,11 @@ def delete(root, key):
 
 
 def find_max_value(node):
-    current = node
-    while current.right:
-        current = current.right
-    return current.val
+    return node.val if not node.right else find_max_value(node.right)
 
 
 def find_min_value(node):
-    current = node
-    while current.left:
-        current = current.left
-    return current.val
+    return node.val if not node.left else find_min_value(node.left)
 
 
 def find_sum_value(node):
